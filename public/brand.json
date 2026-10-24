@@ -21,12 +21,12 @@
     "brochure": "downloads/company-brochure.pdf"
   },
   "links": {
-    "website": "https://hualian-ai.fondmule128.chatgpt.site",
-    "services": "https://hualian-ai.fondmule128.chatgpt.site/services/",
-    "pricing": "https://hualian-ai.fondmule128.chatgpt.site/pricing/",
-    "brochure": "https://hualian-ai.fondmule128.chatgpt.site/downloads/company-brochure.pdf",
-    "contact": "https://hualian-ai.fondmule128.chatgpt.site/contact/",
-    "wechat_qr": "https://raw.githubusercontent.com/tangchengjiao/hualian-ai-brand-center/main/public/assets/contact/wechat-qr.png"
+    "website": "https://hualian-ai.pages.dev",
+    "services": "https://hualian-ai.pages.dev/services/",
+    "pricing": "https://hualian-ai.pages.dev/pricing/",
+    "brochure": "https://hualian-ai.pages.dev/downloads/company-brochure.pdf",
+    "contact": "https://hualian-ai.pages.dev/contact/",
+    "wechat_qr": "https://hualian-ai.pages.dev/assets/contact/wechat-qr.png"
   },
   "publication": {
     "company_brochure": "public",

@@ -1,50 +1,50 @@
-# 华链 AI 官网：Cloudflare Pages 部署与迁移方案
+# 华链 AI 官网：Cloudflare Pages 部署与迁移说明
 
-日期：2026-10-24　状态：旧站方式已核对，迁移准备完成，尚未切换线上入口。
+日期：2026-10-24　状态：已部署并完成生产页面检查。
 
-## 已核实的旧站部署方式
+## 正式入口
 
-- GitHub 源码：https://github.com/tangchengjiao/jianzhou-ai-site 。
-- 已有访问地址：https://jianzhou-ai-site.pages.dev 。本次匿名访问返回 HTTP 200，响应由 Cloudflare 提供。
-- 仓库部署说明与本地交接一致：Cloudflare Pages 托管，使用 Wrangler CLI 上传构建目录；该项目未连接 Git Provider，因此 GitHub 推送不会自动部署。
-- 这条路线不要求购买或运行自有服务器。
+- 官网：https://hualian-ai.pages.dev
+- 企业服务：https://hualian-ai.pages.dev/services/
+- 服务参考价：https://hualian-ai.pages.dev/pricing/
+- 企业宣传册：https://hualian-ai.pages.dev/brochure/
+- 宣传册 PDF：https://hualian-ai.pages.dev/downloads/company-brochure.pdf
+- 联系见舟：https://hualian-ai.pages.dev/contact/
+- 品牌与项目资源：https://hualian-ai.pages.dev/brand/
+- 微信二维码：https://hualian-ai.pages.dev/assets/contact/wechat-qr.png
 
-## 华链官网采用的路线
+## 实际部署方式
 
-GitHub 保留完整源码、已生成静态文件、公开素材、宣传册、发布标准与部署说明；Cloudflare Pages 负责官网访问。以后更换服务器或平台，继续从 GitHub 重新部署，不删除仓库或历史。
+官网托管于 Cloudflare Pages，项目 `hualian-ai`，生产分支 `main`，发布目录 `dist/`，使用 Wrangler Direct Upload。无需部署到产品服务器，既有产品服务器未做修改。
 
-第一阶段新建独立的华链官网 Pages 项目，不覆盖见舟个人站。项目名可先考虑 `hualian-ai`，最终名称和默认域名以 Cloudflare 实际返回值为准，不提前把候选网址写入各仓库。
+GitHub 保留完整源码、已生成页面、公开资源和版本历史，当前推送 GitHub 本身不会自动部署。原 Sites 发布身份和历史作为归档保留，主要官网入口已经切换到 Cloudflare。
 
-网站目前是 8 页静态 HTML，无需额外数据库或常驻后端。发布目录为 `dist/`。本次不迁移或修改产品服务器上的应用。
+## 发布与验证结果
 
-Cloudflare Pages 提供托管与默认 `pages.dev` 地址，可以参考旧站使用；国内实际访问体验需要在新站上线后按真实网络确认，不将换域名等同于大陆节点加速。
+- 首次 Cloudflare 上传 22 个静态文件，返回部署成功。
+- 正式主域名、微信二维码及公开宣传册 PDF 均返回 HTTP 200。
+- 8 页、桌面和手机两种尺寸，共 16 个页面状态通过生产浏览器检查。
+- 微信弹窗、关闭操作、复制咨询提纲、服务预选和手机菜单交互通过。
+- 公开目录中的 PDF 只有企业宣传册，完整报价保留本地私有资料，未进入公开源码或部署。
+- 各仓库联系方式从品牌中心配置生成，二维码与服务资料统一使用正式官网地址。
 
-## 切换时一起处理
+## 后续更新
 
-1. 恢复 Cloudflare 账户的有效授权，查询现有项目，确定新项目的名称。
-2. 通过本项目 `wrangler.jsonc` 所列静态目录部署，取得真实的 Cloudflare 地址。
-3. 使用 `scripts/build_site.py --site-url 新地址` 生成规范链接、分享图片地址和 sitemap。保持二维码、图片、脚本、样式及公开宣传册由同一网站提供。
-4. 检查 8 个页面、手机导航、微信弹窗、复制功能、二维码图片和宣传册下载。
-5. 验证成功后更新品牌中心 `public/brand.json` 中的官网、企业服务、参考价、宣传册、咨询和二维码地址。
-6. 将各自有仓库的统一联系区同步为新地址。二维码改用官网的 `/assets/contact/wechat-qr.png`，不再依赖 GitHub 原始图片地址作为主要展示来源。
-7. GitHub 留存本次源码与发布说明。原有 Sites 身份和历史保留为旧发布记录，不作为新仓库的默认官网入口。
+1. 修改内容与品牌中心配置。
+2. 使用 scripts/build_site.py 生成页面；需要切换域名时传入 --site-url。
+3. 将当前源码和公开资源提交到 GitHub 留档。
+4. 使用已授权的 Wrangler 将 dist/ 发布到 hualian-ai 的 main 分支。
+5. 检查页面和资源；若地址变化，再同步品牌中心和各项目的统一联系区。
 
-完整服务报价始终留在本地私有资料中，不进入 Cloudflare 上传目录、公开源码或宣传册下载列表。
+当前已具备自有域名接入基础；未来绑定自有域名后，可将域名作为长期公共入口，以后更换托管平台优先调整域名解析。
 
-## 自有域名与后续迁移
+## 本次排障记录
 
-当前尚未确认企业域名，因此可以先用 Cloudflare 实际分配的默认地址上线。以后绑定自有域名后，将域名作为长期公共入口；未来更换托管平台时，优先调整域名解析，避免反复修改各项目的服务链接。
+最初 Cloudflare 创建项目接口拒绝邮箱验证状态。用户确认页面已验证后，重新取得 OAuth 授权并直接请求 API，创建成功；现有证据不能区分旧授权缓存与后端状态同步延迟。
 
-公开二维码和宣传册使用稳定路径；GitHub 继续保存这些公开资源的主副本与历史。
-
-## 当前待完成事项
-
-Wrangler 本次没有读取到可用的 Cloudflare 登录，查询项目时提示需要认证。此结果不能据此判断是账户失效还是本机登录上下文不可用；实际创建项目和部署前需完成一次有效授权。
-
-目前没有创建新的 Pages 项目、切换现有域名或改动产品服务器。品牌中心和既有仓库仍保留当前可用链接，避免迁移尚未完成时出现空入口。
+本机 Node 上传客户端另外发生连接重置。本次临时使用仅绑定本机回环地址的传输适配，将 Wrangler 请求转发至 Cloudflare 官方 HTTPS API 后上传成功；适配过程不存储或记录凭据，完成后停止。该适配不属于网站运行依赖。
 
 ## 官方参考
 
-- Cloudflare Pages 静态 HTML：https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
-- Cloudflare Pages 自定义域名：https://developers.cloudflare.com/pages/configuration/custom-domains/
-- 已有个人站部署说明：https://github.com/tangchengjiao/jianzhou-ai-site#github--cloudflare-pages-部署
+- Direct Upload：https://developers.cloudflare.com/pages/get-started/direct-upload/
+- 自定义域名：https://developers.cloudflare.com/pages/configuration/custom-domains/

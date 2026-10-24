@@ -2,7 +2,7 @@
 
 统一维护品牌资料、联系二维码、企业宣传册与仓库发布标准，供当前及后续项目复用。
 
-**[华链 AI 官网](https://hualian-ai.fondmule128.chatgpt.site)** · [企业服务](https://hualian-ai.fondmule128.chatgpt.site/services/) · [服务参考价](https://hualian-ai.fondmule128.chatgpt.site/pricing/) · [企业宣传册](public/downloads/company-brochure.pdf)
+**[华链 AI 官网](https://hualian-ai.pages.dev)** · [企业服务](https://hualian-ai.pages.dev/services/) · [服务参考价](https://hualian-ai.pages.dev/pricing/) · [企业宣传册](public/downloads/company-brochure.pdf)
 
 ## 统一使用哪些资料
 
@@ -56,11 +56,11 @@ python scripts/sync_readme.py --repo "目标项目目录" --apply
 
 培训与 FDE 培养 · 场景验证 · 智能体定制 · 企业实施 · 产品应用支持
 
-[华链 AI 官网](https://hualian-ai.fondmule128.chatgpt.site) · [企业服务](https://hualian-ai.fondmule128.chatgpt.site/services/) · [服务参考价](https://hualian-ai.fondmule128.chatgpt.site/pricing/) · [企业宣传册](https://hualian-ai.fondmule128.chatgpt.site/downloads/company-brochure.pdf) · [合作咨询](https://hualian-ai.fondmule128.chatgpt.site/contact/)
+[华链 AI 官网](https://hualian-ai.pages.dev) · [企业服务](https://hualian-ai.pages.dev/services/) · [服务参考价](https://hualian-ai.pages.dev/pricing/) · [企业宣传册](https://hualian-ai.pages.dev/downloads/company-brochure.pdf) · [合作咨询](https://hualian-ai.pages.dev/contact/)
 
 咨询联系人：**见舟** · 微信：**`DST10209`**
 
-<img src="https://raw.githubusercontent.com/tangchengjiao/hualian-ai-brand-center/main/public/assets/contact/wechat-qr.png" alt="见舟微信二维码" width="200">
+<img src="https://hualian-ai.pages.dev/assets/contact/wechat-qr.png" alt="见舟微信二维码" width="200">
 
 抖音：`74683161410` · 视频号：见舟AI赋能
 <!-- JIANZHOU-PUBLIC-INFO:END -->
