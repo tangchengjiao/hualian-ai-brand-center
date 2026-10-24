@@ -9,6 +9,9 @@
 | 内容 | 位置 |
 | --- | --- |
 | 品牌、联系人及公共链接 | [品牌配置](public/brand.json) |
+| Cloudflare 发布与踩坑 | [可复用手册](skills/jianzhou-github-publish/references/cloudflare-release.md) |
+| Pages 发布助手 | [检查、创建、部署与验证](scripts/cloudflare_pages.py) |
+| 备用传输与依赖 | [本机中继](scripts/cloudflare_transport.py) · [依赖](scripts/requirements-publish.txt) |
 | 官网托管迁移 | [Cloudflare 部署方案](docs/Cloudflare部署与迁移方案.md) |
 | 新项目接入和日常维护 | [统一发布标准](统一发布标准.md) |
 | 可复用发布技能 | [技能定义](skills/jianzhou-github-publish/SKILL.md) |

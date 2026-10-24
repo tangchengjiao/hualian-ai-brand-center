@@ -44,6 +44,12 @@ GitHub 保留完整源码、已生成页面、公开资源和版本历史，当�
 
 本机 Node 上传客户端另外发生连接重置。本次临时使用仅绑定本机回环地址的传输适配，将 Wrangler 请求转发至 Cloudflare 官方 HTTPS API 后上传成功；适配过程不存储或记录凭据，完成后停止。该适配不属于网站运行依赖。
 
+## 已沉淀的复用工具
+
+本次方法已进入[发布技能参考](../skills/jianzhou-github-publish/references/cloudflare-release.md)和[统一标准](../统一发布标准.md)。[Pages 助手](../scripts/cloudflare_pages.py)可参数化查询身份与项目、按需创建、部署和检查链接；明确需要时用 --transport relay 复用本机备用传输，结束自动关闭。
+
+本次工具验证包含三项离线行为检查：二进制上传透传且不记录凭据、子进程失败后关闭中继并保留调用者环境、已有项目不重复创建；另对现有 hualian-ai 项目做了只读检查，没有触发重建或重新部署。
+
 ## 官方参考
 
 - Direct Upload：https://developers.cloudflare.com/pages/get-started/direct-upload/
