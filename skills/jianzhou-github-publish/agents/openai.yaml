@@ -1,4 +1,6 @@
 interface:
   display_name: "见舟与华链统一发布"
-  short_description: "为新旧 GitHub 项目统一 README、联系二维码、企业服务入口与发行物"
-  default_prompt: "使用 $jianzhou-github-publish 按品牌中心标准整理这个项目的 README、联系方式和发布入口。"
+  short_description: "上传自有项目到 GitHub 时默认加入统一二维码、企业服务与资料入口"
+  default_prompt: "使用 $jianzhou-github-publish 上传这个项目，自动加入统一 README 联系区和企业服务链接。"
+policy:
+  allow_implicit_invocation: true
