@@ -1,5 +1,5 @@
 {
-  "standard_version": "1.2",
+  "standard_version": "1.3",
   "updated_on": "2026-10-24",
   "company_brand": "华链 AI",
   "company_positioning": "企业 AI 业务落地与内生能力建设",
@@ -26,7 +26,10 @@
     "pricing": "https://hualian-ai.pages.dev/pricing/",
     "brochure": "https://hualian-ai.pages.dev/downloads/company-brochure.pdf",
     "contact": "https://hualian-ai.pages.dev/contact/",
-    "wechat_qr": "https://hualian-ai.pages.dev/assets/contact/wechat-qr.png"
+    "wechat_qr": "https://hualian-ai.pages.dev/assets/contact/wechat-qr.png",
+    "douyin_qr": "https://hualian-ai.pages.dev/assets/contact/douyin-qr.png",
+    "channels_qr": "https://hualian-ai.pages.dev/assets/contact/channels-qr.png",
+    "official_account_qr": "https://hualian-ai.pages.dev/assets/contact/official-account-qr.jpg"
   },
   "publication": {
     "company_brochure": "public",
@@ -39,6 +42,12 @@
     "include_contact_qr": true,
     "include_enterprise_service_links": true,
     "retain_github_source_and_history": true,
-    "full_quotation_public": false
+    "full_quotation_public": false,
+    "contact_qr_channels": [
+      "wechat",
+      "douyin",
+      "channels",
+      "official_account"
+    ]
   }
 }
