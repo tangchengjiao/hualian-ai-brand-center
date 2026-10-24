@@ -10,6 +10,8 @@
 | --- | --- |
 | 品牌、联系人及公共链接 | [品牌配置](public/brand.json) |
 | 新项目接入和日常维护 | [统一发布标准](统一发布标准.md) |
+| 可复用发布技能 | [技能定义](skills/jianzhou-github-publish/SKILL.md) |
+| 本次发布记录 | [2026-10-24](docs/发布记录-2026-10-24.md) |
 | 项目联系区 | [README 模板](templates/readme-footer.md) |
 | 联系区同步 | [同步脚本](scripts/sync_readme.py) |
 | 企业宣传册 | [公开 PDF](public/downloads/company-brochure.pdf) |
