@@ -1,0 +1,36 @@
+{
+  "standard_version": "1.0",
+  "updated_on": "2026-10-24",
+  "company_brand": "华链 AI",
+  "company_positioning": "企业 AI 业务落地与内生能力建设",
+  "personal_brand": "见舟",
+  "github_owner": "tangchengjiao",
+  "contact": {
+    "name": "见舟",
+    "wechat": "DST10209",
+    "douyin_id": "74683161410",
+    "channels_name": "见舟AI赋能",
+    "company_phone": "0755-86372525 / 86352526"
+  },
+  "assets": {
+    "wechat_qr": "assets/contact/wechat-qr.png",
+    "douyin_qr": "assets/contact/douyin-qr.png",
+    "channels_qr": "assets/contact/channels-qr.png",
+    "official_account_qr": "assets/contact/official-account-qr.jpg",
+    "contact_sheet": "assets/contact/contact-sheet.png",
+    "brochure": "downloads/company-brochure.pdf"
+  },
+  "links": {
+    "website": "https://hualian-ai.fondmule128.chatgpt.site",
+    "services": "https://hualian-ai.fondmule128.chatgpt.site/services/",
+    "pricing": "https://hualian-ai.fondmule128.chatgpt.site/pricing/",
+    "brochure": "https://hualian-ai.fondmule128.chatgpt.site/downloads/company-brochure.pdf",
+    "contact": "https://hualian-ai.fondmule128.chatgpt.site/contact/",
+    "wechat_qr": "https://raw.githubusercontent.com/tangchengjiao/hualian-ai-brand-center/main/public/assets/contact/wechat-qr.png"
+  },
+  "publication": {
+    "company_brochure": "public",
+    "website_pricing": "selected_reference_prices",
+    "full_quotation": "private_only"
+  }
+}
