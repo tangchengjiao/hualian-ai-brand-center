@@ -25,10 +25,27 @@ class ContactPublishing(unittest.TestCase):
             self.assertEqual(copies, {})
             self.assertTrue(preview.startswith(prefix))
             self.assertTrue(preview.endswith(suffix))
-            self.assertEqual(len(re.findall(r'<img\s', preview)), 4)
+            contacts = preview.split(sync_readme.CONTACT_START)[1].split(sync_readme.CONTACT_END)[0]
+            enterprise = preview.split(sync_readme.START)[1].split(sync_readme.END)[0]
+            self.assertEqual(len(re.findall(r'<img\s', contacts)), 4)
+            self.assertEqual(len(re.findall(r'<img\s', enterprise)), 1)
+            self.assertNotIn('抖音', enterprise)
+            self.assertLess(preview.index(sync_readme.CONTACT_START), preview.index(sync_readme.START))
             self.assertTrue(sync_readme.apply(repo))
             self.assertFalse(sync_readme.apply(repo))
             self.assertEqual(readme.read_text(encoding='utf-8'), preview)
+
+    def test_existing_contact_table_stays_in_its_original_position(self):
+        with tempfile.TemporaryDirectory() as folder:
+            repo = Path(folder)
+            original = '# Project\n\n## 联系二维码\n\nOld QR table\n\n## Installation\n\nKeep these steps.\n'
+            (repo / 'README.md').write_text(original, encoding='utf-8')
+            sync_readme.apply(repo)
+            updated = (repo / 'README.md').read_text(encoding='utf-8')
+            self.assertEqual(updated.count('## 联系二维码'), 1)
+            self.assertLess(updated.index('## 联系二维码'), updated.index('## Installation'))
+            self.assertIn('## Installation\n\nKeep these steps.', updated)
+            self.assertFalse(sync_readme.apply(repo))
 
     def test_missing_public_urls_copy_all_four_real_images(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -46,15 +63,17 @@ class ContactPublishing(unittest.TestCase):
                 source.write_bytes(bytes([index, 255, 0]))
                 expected[source.name] = source.read_bytes()
             (center / 'public/brand.json').write_text(json.dumps(profile), encoding='utf-8')
-            (center / 'templates/readme-footer.md').write_bytes(
-                (sync_readme.CENTER / 'templates/readme-footer.md').read_bytes())
+            for filename in ['readme-footer.md', 'readme-contacts.md']:
+                (center / 'templates' / filename).write_bytes(
+                    (sync_readme.CENTER / 'templates' / filename).read_bytes())
             with patch.object(sync_readme, 'CENTER', center):
                 sync_readme.prepare(repo)
                 self.assertEqual(list(repo.iterdir()), [])
                 sync_readme.apply(repo)
                 rendered = (repo / 'README.md').read_text(encoding='utf-8')
                 urls = re.findall(r'<img src="([^"]+)"', rendered)
-                self.assertEqual(len(urls), 4)
+                self.assertEqual(len(urls), 5)
+                self.assertEqual(len(set(urls)), 4)
                 for url in urls:
                     path = repo / url
                     self.assertEqual(path.read_bytes(), expected[path.name])

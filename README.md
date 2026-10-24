@@ -22,12 +22,14 @@
 
 完整服务报价通过见舟微信获取，本公开仓库不提供原文下载。
 
+<!-- JIANZHOU-CONTACT-QR:START -->
 ## 联系二维码
 
 | 微信 | 抖音 | 视频号 | 公众号 |
 | :---: | :---: | :---: | :---: |
-| ![微信](public/assets/contact/wechat-qr.png) | ![抖音](public/assets/contact/douyin-qr.png) | ![视频号](public/assets/contact/channels-qr.png) | ![公众号](public/assets/contact/official-account-qr.jpg) |
-| DST10209 | 74683161410 | 见舟AI赋能 | 扫码关注 |
+| <img src="https://hualian-ai.pages.dev/assets/contact/wechat-qr.png" alt="见舟微信二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/douyin-qr.png" alt="见舟抖音二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/channels-qr.png" alt="见舟AI赋能视频号二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/official-account-qr.jpg" alt="公众号二维码" width="160"> |
+| `DST10209` | `74683161410` | 见舟AI赋能 | 扫码关注 |
+<!-- JIANZHOU-CONTACT-QR:END -->
 
 ## 新仓库接入
 
@@ -63,8 +65,5 @@ python scripts/sync_readme.py --repo "目标项目目录" --apply
 
 咨询联系人：**见舟** · 微信：**`DST10209`**
 
-| 微信 | 抖音 | 视频号 | 公众号 |
-| :---: | :---: | :---: | :---: |
-| <img src="https://hualian-ai.pages.dev/assets/contact/wechat-qr.png" alt="见舟微信二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/douyin-qr.png" alt="见舟抖音二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/channels-qr.png" alt="见舟AI赋能视频号二维码" width="160"> | <img src="https://hualian-ai.pages.dev/assets/contact/official-account-qr.jpg" alt="公众号二维码" width="160"> |
-| `DST10209` | `74683161410` | 见舟AI赋能 | 扫码关注 |
+<img src="https://hualian-ai.pages.dev/assets/contact/wechat-qr.png" alt="见舟微信二维码" width="200">
 <!-- JIANZHOU-PUBLIC-INFO:END -->
